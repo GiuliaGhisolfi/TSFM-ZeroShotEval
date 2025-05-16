@@ -24,14 +24,14 @@ from torch import nn
 from torch.distributions import Distribution
 from torch.utils._pytree import tree_map
 
-from a.common.torch_util import packed_causal_attention_mask
-from a.distribution import DistributionOutput
-from a.module.norm import RMSNorm
-from a.module.packed_scaler import PackedNOPScaler, PackedStdScaler
-from a.module.position import (BinaryAttentionBias, QueryKeyProjection,
-                               RotaryProjection)
-from a.module.transformer import TransformerEncoder
-from a.module.ts_embed import FeatLinear, MultiInSizeLinear
+from uni2ts.common.torch_util import packed_causal_attention_mask
+from uni2ts.distribution import DistributionOutput
+from uni2ts.module.norm import RMSNorm
+from uni2ts.module.packed_scaler import PackedNOPScaler, PackedStdScaler
+from uni2ts.module.position import (BinaryAttentionBias, QueryKeyProjection,
+                                    RotaryProjection)
+from uni2ts.module.transformer import TransformerEncoder
+from uni2ts.module.ts_embed import FeatLinear, MultiInSizeLinear
 
 
 def encode_distr_output(

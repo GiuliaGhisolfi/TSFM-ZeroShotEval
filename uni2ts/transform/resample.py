@@ -19,8 +19,8 @@ from typing import Any
 
 import numpy as np
 
-from a.common.sampler import Sampler, get_sampler
-from a.common.typing import UnivarTimeSeries
+from uni2ts.common.sampler import Sampler, get_sampler
+from uni2ts.common.typing import UnivarTimeSeries
 
 from ._base import Transformation
 from ._mixin import CheckArrNDimMixin, CollectFuncMixin, MapFuncMixin

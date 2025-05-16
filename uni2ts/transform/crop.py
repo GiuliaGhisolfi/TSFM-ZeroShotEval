@@ -20,7 +20,7 @@ from typing import Any
 
 import numpy as np
 
-from a.common.typing import UnivarTimeSeries
+from uni2ts.common.typing import UnivarTimeSeries
 
 from ._base import Transformation
 from ._mixin import MapFuncMixin

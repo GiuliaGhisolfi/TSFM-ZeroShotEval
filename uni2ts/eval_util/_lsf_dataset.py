@@ -3,7 +3,7 @@ import os
 import numpy as np
 import pandas as pd
 
-from a.common.env import env
+from uni2ts.common.env import env
 
 
 class LSFDataset:

@@ -1,5 +1,6 @@
-from a.src.moirai.model.moirai import MoiraiForecast, MoiraiModule
-from a.src.moirai.model.moirai_moe import MoiraiMoEForecast, MoiraiMoEModule
+from uni2ts.src.moirai.model.moirai import MoiraiForecast, MoiraiModule
+from uni2ts.src.moirai.model.moirai_moe import (MoiraiMoEForecast,
+                                                MoiraiMoEModule)
 
 MOIRAI_MODELS = [
     "Salesforce/moirai-1.0-R-small",
