@@ -18,15 +18,15 @@ print(
 )
 import sys
 
-from aaaaa.timesfm_base import (TimesFmBase, TimesFmCheckpoint, TimesFmHparams,
-                                freq_map)
+from timesfm.timesfm_base import (TimesFmBase, TimesFmCheckpoint,
+                                  TimesFmHparams, freq_map)
 
 try:
-    from aaaaa.timesfm_jax import TimesFmJax as TimesFm
     from timesfm import data_loader
+    from timesfm.timesfm_jax import TimesFmJax as TimesFm
 
     print(f"Loaded Jax TimesFM, likely because python version is {sys.version}.")
 except Exception as _:
-    from aaaaa.timesfm_torch import TimesFmTorch as TimesFm
+    from timesfm.timesfm_torch import TimesFmTorch as TimesFm
 
     print(f"Loaded PyTorch TimesFM, likely because python version is {sys.version}.")

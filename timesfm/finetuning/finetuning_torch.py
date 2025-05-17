@@ -15,7 +15,7 @@ import wandb
 from torch.nn.parallel import DistributedDataParallel as DDP
 from torch.utils.data import DataLoader, Dataset
 
-from aaaaa.pytorch_patched_decoder import create_quantiles
+from timesfm.pytorch_patched_decoder import create_quantiles
 
 
 class MetricsLogger(ABC):
