@@ -32,7 +32,7 @@ from gluonts.transform import Transformation
 from pandas.tseries.frequencies import to_offset
 from toolz import compose
 
-TEST_SPLIT = 0.1
+TEST_SPLIT = 1 # TODO: default was 0.1 for testing, but changed to 1 for full dataset evaluation
 MAX_WINDOW = 20
 
 M4_PRED_LENGTH_MAP = {
