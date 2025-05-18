@@ -8,6 +8,10 @@ from gift_eval.data import Dataset
 
 
 def load_gift_data():
+    # make directory for datasets if it does not exist
+    if not os.path.exists("data/gift_benchmark"):
+        os.makedirs("data/gift_benchmark")
+
     # Load environment variables
     load_dotenv()
 
