@@ -1,9 +1,45 @@
+import os
+from pathlib import Path
+
 import pandas as pd
+from dotenv import load_dotenv
 
 from gift_eval.data import Dataset
 
 
-def load_gift_data(ds_name: str):
+def load_gift_data():
+    # Load environment variables
+    load_dotenv()
+
+    # Get the GIFT_EVAL path from environment variables
+    gift_eval_path = os.getenv("GIFT_EVAL")
+
+    if gift_eval_path:
+        # Convert to Path object for easier manipulation
+        gift_eval_path = Path(gift_eval_path)
+
+        # Get all subdirectories (dataset names) in the GIFT_EVAL path
+        dataset_names = []
+        for dataset_dir in gift_eval_path.iterdir():
+            if dataset_dir.name.startswith("."):
+                continue
+            if dataset_dir.is_dir():
+                freq_dirs = [d for d in dataset_dir.iterdir() if d.is_dir()]
+                if freq_dirs:
+                    for freq_dir in freq_dirs:
+                        dataset_names.append(f"{dataset_dir.name}/{freq_dir.name}")
+                else:
+                    dataset_names.append(dataset_dir.name)
+
+        print("Available datasets in GIFT_EVAL:")
+        for name in sorted(dataset_names):
+            print(f"- {name}")
+    else:
+        print(
+            "GIFT_EVAL path not found in environment variables. Please check your .env file."
+        )
+
+def gift_data_to_df(ds_name: str):
     """
     Load the GIFT dataset.
 
