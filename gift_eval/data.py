@@ -20,6 +20,7 @@ from functools import cached_property
 from pathlib import Path
 from typing import Iterable, Iterator
 
+import datasets
 import pyarrow.compute as pc
 from dotenv import load_dotenv
 from gluonts.dataset import DataEntry
@@ -30,8 +31,6 @@ from gluonts.time_feature import norm_freq_str
 from gluonts.transform import Transformation
 from pandas.tseries.frequencies import to_offset
 from toolz import compose
-
-import datasets
 
 TEST_SPLIT = 0.1
 MAX_WINDOW = 20
@@ -148,7 +147,17 @@ class Dataset:
 
     @cached_property
     def freq(self) -> str:
-        return self.hf_dataset[0]["freq"]
+        #return self.hf_dataset[0]["freq"]
+        
+        # Load the first row as a Pandas DataFrame to avoid potential issues
+        # with direct NumPy conversion in datasets library for certain data types.
+        try:
+            return self.hf_dataset.to_pandas().iloc[0]["freq"]
+        except Exception as e:
+            print(f"Error loading freq from dataset: {e}")
+            # If reading as pandas fails, fall back to original method
+            # although it might still fail with the ValueError
+            return self.hf_dataset[0]["freq"]
 
     @cached_property
     def target_dim(self) -> int:

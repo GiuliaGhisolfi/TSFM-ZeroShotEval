@@ -3,20 +3,35 @@ from pathlib import Path
 
 import pandas as pd
 from dotenv import load_dotenv
+from huggingface_hub import snapshot_download
 
 from gift_eval.data import Dataset
 
 
-def load_gift_data():
+def load_gift_data(colab: bool = True):
     # make directory for datasets if it does not exist
     if not os.path.exists("data/gift_benchmark"):
         os.makedirs("data/gift_benchmark")
+    
+    if colab:
+        local_dir = "data/gift_benchmark"
+        os.makedirs(local_dir, exist_ok=True)
+
+        snapshot_download(
+            repo_id="Salesforce/GiftEval",
+            repo_type="dataset",
+            local_dir=local_dir,
+            local_dir_use_symlinks=False
+        )
 
     # Load environment variables
     load_dotenv()
 
     # Get the GIFT_EVAL path from environment variables
-    gift_eval_path = os.getenv("GIFT_EVAL")
+    if colab:
+        gift_eval_path = Path("data/gift_benchmark")
+    else:
+        gift_eval_path = os.getenv("GIFT_EVAL")
 
     if gift_eval_path:
         # Convert to Path object for easier manipulation
