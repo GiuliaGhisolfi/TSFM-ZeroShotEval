@@ -58,7 +58,7 @@ def load_gift_data(colab: bool = True):
             "GIFT_EVAL path not found in environment variables. Please check your .env file."
         )
 
-def gift_data_to_df(ds_name: str):
+def gift_data_to_df(ds_name: str, test_data_only: bool = True) -> pd.DataFrame:
     """
     Load the GIFT dataset.
 
@@ -74,18 +74,7 @@ def gift_data_to_df(ds_name: str):
 
     dataset = Dataset(name=ds_name, term=term, to_univariate=to_univariate)
 
-    train_split_iter = dataset.training_dataset
-    val_split_iter = dataset.validation_dataset
     test_split_iter = dataset.test_data
-
-    train_data = [x for x in train_split_iter]
-    train_df = pd.DataFrame(train_data)
-    train_df["set"] = "train"
-
-    val_data = [x for x in val_split_iter]
-    val_df = pd.DataFrame(val_data)
-    val_df["set"] = "val"
-
     test_data = []
     for x in test_split_iter:
         x0, x1 = x
@@ -93,6 +82,22 @@ def gift_data_to_df(ds_name: str):
         test_data.append(x1)
     test_df = pd.DataFrame(test_data)
     test_df["set"] = "test"
+
+    if test_data_only:
+        return test_df
+    
+    else:
+        train_split_iter = dataset.training_dataset
+        val_split_iter = dataset.validation_dataset
+    
+
+        train_data = [x for x in train_split_iter]
+        train_df = pd.DataFrame(train_data)
+        train_df["set"] = "train"
+
+        val_data = [x for x in val_split_iter]
+        val_df = pd.DataFrame(val_data)
+        val_df["set"] = "val"
 
     # concatenate the dataframes
     df = pd.concat([train_df, val_df, test_df], ignore_index=True)
