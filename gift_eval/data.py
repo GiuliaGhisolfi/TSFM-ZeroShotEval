@@ -32,8 +32,8 @@ from gluonts.transform import Transformation
 from pandas.tseries.frequencies import to_offset
 from toolz import compose
 
-TEST_SPLIT = 1 # TODO: default was 0.1 for testing, but changed to 1 for full dataset evaluation
-MAX_WINDOW = 20
+TEST_SPLIT = 0.1 # Fraction of the series length to use for testing
+MAX_WINDOW = 20 # Maximum number of windows to use for training
 
 M4_PRED_LENGTH_MAP = {
     "A": 6,
@@ -74,6 +74,13 @@ TFB_PRED_LENGTH_MAP = {
 
 
 class Term(Enum):
+    """
+    Term of the dataset, used to determine the prediction length multiplier.
+    - SHORT: 1x prediction length
+    - MEDIUM: 10x prediction length
+    - LONG: 15x prediction length
+    Used to adjust the prediction length based on the term.
+    """
     SHORT = "short"
     MEDIUM = "medium"
     LONG = "long"
