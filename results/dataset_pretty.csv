@@ -1,0 +1,16 @@
+domain,dataset,frequency,Num. Samples,Num. Variates,Term
+Energy,Solar,1 day,548,1,short
+Energy,Solar,1 hour,5206,1,"long, medium, short"
+Energy,Solar,1 week,274,1,short
+Energy,Solar,10 min,5480,1,"long, medium, short"
+Nature,Jena Weather,1 day,4,21,short
+Nature,Jena Weather,1 hour,38,21,"long, medium, short"
+Nature,Jena Weather,10 min,40,21,"long, medium, short"
+Web/CloudOps,Bitbrains Fast Storage,1 hour,5000,2,short
+Web/CloudOps,Bitbrains Fast Storage,5 min,45000,2,"long, medium, short"
+Web/CloudOps,Bitbrains RND,1 hour,2000,2,short
+Web/CloudOps,Bitbrains RND,5 min,18000,2,"long, medium, short"
+Web/CloudOps,Bizitobs Application,10 sec,30,2,"long, medium, short"
+Web/CloudOps,Bizitobs L2C,1 hour,12,7,"long, medium, short"
+Web/CloudOps,Bizitobs L2C,5 min,40,7,"long, medium, short"
+Web/CloudOps,Bizitobs Service,10 sec,630,2,"long, medium, short"
