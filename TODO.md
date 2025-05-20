@@ -7,8 +7,8 @@ CHRONOS
 
 - [x]"amazon/chronos-bolt-tiny"
 - [x]"amazon/chronos-bolt-mini"
-- [ ]"amazon/chronos-bolt-small" 8/35
-- [ ]"amazon/chronos-bolt-base" 17/35
+- [x]"amazon/chronos-bolt-small"
+- [ ]"amazon/chronos-bolt-base" 19/35
 
 
 MOIRAI
