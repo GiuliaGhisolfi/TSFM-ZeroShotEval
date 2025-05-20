@@ -1,0 +1,36 @@
+dataset,domain,num_variates,num_samples,frequency,term
+Solar,Energy,1,5480,10 min,short
+Solar,Energy,1,5480,10 min,medium
+Solar,Energy,1,5480,10 min,long
+Solar,Energy,1,548,1 day,short
+Solar,Energy,1,5206,1 hour,short
+Solar,Energy,1,5206,1 hour,medium
+Solar,Energy,1,5206,1 hour,long
+Solar,Energy,1,274,1 week,short
+Jena Weather,Nature,21,40,10 min,short
+Jena Weather,Nature,21,40,10 min,medium
+Jena Weather,Nature,21,40,10 min,long
+Jena Weather,Nature,21,4,1 day,short
+Jena Weather,Nature,21,38,1 hour,short
+Jena Weather,Nature,21,38,1 hour,medium
+Jena Weather,Nature,21,38,1 hour,long
+Bitbrains Fast Storage,Web/CloudOps,2,45000,5 min,short
+Bitbrains Fast Storage,Web/CloudOps,2,45000,5 min,medium
+Bitbrains Fast Storage,Web/CloudOps,2,45000,5 min,long
+Bitbrains Fast Storage,Web/CloudOps,2,5000,1 hour,short
+Bitbrains RND,Web/CloudOps,2,18000,5 min,short
+Bitbrains RND,Web/CloudOps,2,18000,5 min,medium
+Bitbrains RND,Web/CloudOps,2,18000,5 min,long
+Bitbrains RND,Web/CloudOps,2,2000,1 hour,short
+Bizitobs Application,Web/CloudOps,2,30,10 sec,short
+Bizitobs Application,Web/CloudOps,2,30,10 sec,medium
+Bizitobs Application,Web/CloudOps,2,30,10 sec,long
+Bizitobs L2C,Web/CloudOps,7,40,5 min,short
+Bizitobs L2C,Web/CloudOps,7,40,5 min,medium
+Bizitobs L2C,Web/CloudOps,7,40,5 min,long
+Bizitobs L2C,Web/CloudOps,7,12,1 hour,short
+Bizitobs L2C,Web/CloudOps,7,12,1 hour,medium
+Bizitobs L2C,Web/CloudOps,7,12,1 hour,long
+Bizitobs Service,Web/CloudOps,2,630,10 sec,short
+Bizitobs Service,Web/CloudOps,2,630,10 sec,medium
+Bizitobs Service,Web/CloudOps,2,630,10 sec,long

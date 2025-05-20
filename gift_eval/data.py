@@ -49,12 +49,12 @@ M4_PRED_LENGTH_MAP = {
 
 PRED_LENGTH_MAP = {
     "M": 12,
-    "W": 8,
+    "W": 8, # 1 week
     "D": 30,
     "H": 48,
-    "T": 48,
+    "T": 48, # 1 min
     "min": 48,
-    "S": 60,
+    "S": 60, # 1 sec
     "s": 60,
     "h": 48,
 }
