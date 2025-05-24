@@ -17,10 +17,10 @@ MOIRAI
 - [x]"Salesforce/moirai-1.1-R-large" "morai_large"
 
 - [ ]"Salesforce/moirai-moe-1.0-R-small" "moirai_moe_small" 7/35
-        short: 'bizitobs_application', 'jena_weather/10T', 'bitbrains_fast_storage/5T',
+        - [ ]short: 'bizitobs_application', 'jena_weather/10T', 'bitbrains_fast_storage/5T',
             'bizitobs_service', 'solar/D', 'bitbrains_rnd/H',
-        medium
-        long
+        - [ ]medium
+        - [ ]long
 - [ ]"Salesforce/moirai-moe-1.0-R-base" "moirai_moe_base"
 
 
