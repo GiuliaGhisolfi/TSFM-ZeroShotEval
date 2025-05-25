@@ -42,14 +42,13 @@ TIMESFM
 - [x]'bitbrains_fast_storage/H/short',
 
 - [x]'bitbrains_rnd/5T/short',
-- [ ]'bitbrains_rnd/5T/medium',
+- [x]'bitbrains_rnd/5T/medium',
 - [x]'bitbrains_rnd/5T/long',
 - [x]'bitbrains_rnd/H/short',
 
 - [x]'bizitobs_l2c/5T/short',
-- [ ]'bizitobs_l2c/5T/medium',
-- [ ]'bizitobs_l2c/5T/long',
-
+- [x]'bizitobs_l2c/5T/medium',
+- [x]'bizitobs_l2c/5T/long',
 - [x]'bizitobs_l2c/H/short',
 - [x]'bizitobs_l2c/H/medium',
 - [x]'bizitobs_l2c/H/long',
@@ -65,7 +64,9 @@ TIMESFM
 - [ ]'jena_weather/10T/short',
 - [ ]'jena_weather/10T/medium',
 - [ ]'jena_weather/10T/long',
+
 - [ ]'jena_weather/H/short',
 - [ ]'jena_weather/H/medium',
 - [ ]'jena_weather/H/long',
+
 - [ ]'jena_weather/D/short',
