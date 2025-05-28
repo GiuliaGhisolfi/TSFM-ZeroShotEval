@@ -246,7 +246,7 @@ class MoiraiForecast(L.LightningModule):
         past_observed_feat_dynamic_real: Optional[
             Float[torch.Tensor, "batch past_time past_feat"]
         ] = None,
-        num_samples: Optional[int] = None,
+        num_samples: Optional[int] = None, # number of samples to draw from the distribution
     ) -> Float[torch.Tensor, "batch sample future_time *tgt"]:
         if self.hparams.patch_size == "auto":
             val_loss = []
@@ -924,6 +924,16 @@ class MoiraiForecast(L.LightningModule):
         preds: Float[torch.Tensor, "sample batch combine_seq patch"],
         target_dim: int,
     ) -> Float[torch.Tensor, "batch sample future_time *tgt"]:
+        """
+        Format the predictions to the expected output shape.
+        Args:
+            patch_size (int): The size of the patch.
+            preds (Float[torch.Tensor, "sample batch combine_seq patch"]): The predictions from the model.
+            target_dim (int): The dimension of the target variable.
+
+        Returns:
+            Float[torch.Tensor, "batch sample future_time *tgt"]: The formatted predictions.
+        """
         start = target_dim * self.context_token_length(patch_size)
         end = start + target_dim * self.prediction_token_length(patch_size)
         preds = preds[..., start:end, :patch_size]
