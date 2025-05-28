@@ -39,5 +39,5 @@ def evaluate_metrics(forecast, target):
         dict: A dictionary with metric names as keys and their computed values.
     """
     metrics = get_metrics()
-    results = {metric.name: metric(forecast, target) for metric in metrics}
+    results = {metric: metric(forecast, target) for metric in metrics}
     return results
