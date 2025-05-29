@@ -12,7 +12,7 @@ TERM_MAP = {
 }
 
 def load_data(dataset_name, term="short"):
-    with open("data/chronos_data_proprieties.json") as f:
+    with open("data/chronos_dataset_properties.json") as f:
         dataset_properties_map = json.load(f)
 
     df = pd.read_parquet(f"data/chronos_benchmark/{dataset_name}.arrow")
