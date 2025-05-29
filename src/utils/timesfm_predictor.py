@@ -30,12 +30,7 @@ def get_model(model_path, backend="gpu"):
             hparams=timesfm.TimesFmHparams(
                 backend=backend,
                 per_core_batch_size=32,
-                num_layers=20,
                 horizon_len=128,
-                context_len=2048,
-                use_positional_embedding=False,
-                output_patch_len=128,
-                model_dims=1280,
             ),
             checkpoint=timesfm.TimesFmCheckpoint(
                 huggingface_repo_id=model_path),
