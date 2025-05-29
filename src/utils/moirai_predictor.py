@@ -16,7 +16,7 @@ MOIRAI_MOE_MODELS = [
     "Salesforce/moirai-moe-1.0-R-base"
 ]
 
-def load_model(name: str, prediction_length: int = 1):
+def load_predictor(name: str, prediction_length: int=1, target_dim: int=1, device_map: str="cuda"):
     """
     Load a model by its name.
     
@@ -27,25 +27,27 @@ def load_model(name: str, prediction_length: int = 1):
         object: The loaded model.
     """
     if  name in MOIRAI_MODELS:
-        return MoiraiForecast(
-            module=MoiraiModule.from_pretrained(name),
+        model = MoiraiForecast(
+            module=MoiraiModule.from_pretrained(name).to(device_map),
             prediction_length=prediction_length,
             context_length=4000,
             patch_size=32,
             num_samples=100,
-            target_dim=1,
+            target_dim=target_dim,
             feat_dynamic_real_dim=0,
             past_feat_dynamic_real_dim=0,
         )
     
     elif name in MOIRAI_MOE_MODELS:
-        return MoiraiMoEForecast(
-            module=MoiraiMoEModule.from_pretrained(name),
+        model = MoiraiMoEForecast(
+            module=MoiraiMoEModule.from_pretrained(name).to(device_map),
             prediction_length=prediction_length,
             context_length=4000,
             patch_size=32,
             num_samples=100,
-            target_dim=1,
+            target_dim=target_dim,
             feat_dynamic_real_dim=0,
             past_feat_dynamic_real_dim=0,
         )
+    
+    return model.create_predictor(batch_size=32)
