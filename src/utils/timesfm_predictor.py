@@ -10,20 +10,32 @@ from tqdm.auto import tqdm
 import timesfm as timesfm
 
 
-def get_model(model_path="google/timesfm-2.0-500m-pytorch", backend="gpu"):
-    tfm = timesfm.TimesFm(
-        hparams=timesfm.TimesFmHparams(
-            backend=backend,
-            per_core_batch_size=32,
-            num_layers=50,
-            horizon_len=128,
+def get_model(model_path, backend="gpu"):
+    if "timesfm-2.0" in model_path:
+        tfm = timesfm.TimesFm(
+            hparams=timesfm.TimesFmHparams(
+                backend=backend,
+                per_core_batch_size=32,
+                num_layers=50,
+                horizon_len=128,
+                context_len=2048,
+                use_positional_embedding=False,
+                output_patch_len=128,
+            ),
+            checkpoint=timesfm.TimesFmCheckpoint(
+                huggingface_repo_id=model_path),
+        )
+    else:
+        tfm = timesfm.TimesFm(
             context_len=2048,
-            use_positional_embedding=False,
+            horizon_len=128,
+            input_patch_len=32,
             output_patch_len=128,
-        ),
-        checkpoint=timesfm.TimesFmCheckpoint(
-            huggingface_repo_id=model_path),
-    )
+            num_layers=20,
+            model_dims=1280,
+            backend=backend,
+        )
+        tfm.load_from_checkpoint(repo_id=model_path)
 
     return tfm
 
