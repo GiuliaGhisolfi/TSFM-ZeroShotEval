@@ -37,6 +37,14 @@ class ModelConfig:
 
         self.intervals = sorted(intervals)
 
+class WarningFilter(logging.Filter):
+    def __init__(self, text_to_filter):
+        super().__init__()
+        self.text_to_filter = text_to_filter
+
+    def filter(self, record):
+        return self.text_to_filter not in record.getMessage()
+
 class ChronosPredictor:
     def __init__(
         self,
@@ -46,6 +54,11 @@ class ChronosPredictor:
         *args,
         **kwargs,
     ):
+        gts_logger = logging.getLogger("gluonts.model.forecast")
+        gts_logger.addFilter(
+            WarningFilter("The mean prediction is not stored in the forecast data")
+        )
+
         print("prediction_length:", prediction_length)
         self.pipeline = BaseChronosPipeline.from_pretrained(
             model_path,
@@ -102,18 +115,3 @@ class ChronosPredictor:
                 )
 
         return forecasts
-
-
-class WarningFilter(logging.Filter):
-    def __init__(self, text_to_filter):
-        super().__init__()
-        self.text_to_filter = text_to_filter
-
-    def filter(self, record):
-        return self.text_to_filter not in record.getMessage()
-
-
-gts_logger = logging.getLogger("gluonts.model.forecast")
-gts_logger.addFilter(
-    WarningFilter("The mean prediction is not stored in the forecast data")
-)
