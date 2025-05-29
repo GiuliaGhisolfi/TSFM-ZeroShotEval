@@ -27,15 +27,19 @@ def get_model(model_path, backend="gpu"):
         )
     else:
         tfm = timesfm.TimesFm(
-            context_len=2048,
-            horizon_len=128,
-            input_patch_len=32,
-            output_patch_len=128,
-            num_layers=20,
-            model_dims=1280,
-            backend=backend,
+            hparams=timesfm.TimesFmHparams(
+                backend=backend,
+                per_core_batch_size=32,
+                num_layers=20,
+                horizon_len=128,
+                context_len=2048,
+                use_positional_embedding=False,
+                output_patch_len=128,
+                model_dims=1280,
+            ),
+            checkpoint=timesfm.TimesFmCheckpoint(
+                huggingface_repo_id=model_path),
         )
-        tfm.load_from_checkpoint(repo_id=model_path)
 
     return tfm
 
