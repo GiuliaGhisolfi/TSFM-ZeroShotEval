@@ -1109,7 +1109,6 @@ chronos_bolt_mini,dominick/long,6,31.777958869934082,Sales,1,30,W
 chronos_bolt_mini,dominick/long,7,31.94441270828247,Sales,1,30,W
 chronos_bolt_mini,dominick/long,8,31.90894889831543,Sales,1,30,W
 chronos_bolt_mini,dominick/long,9,31.905179500579834,Sales,1,30,W
-
 chronos_bolt_mini,bizitobs_service/10S/short,0,0.8483474254608154,"('Web/CloudOps',)","(2,)",60,10S
 chronos_bolt_mini,bizitobs_service/10S/short,1,0.7654647827148438,"('Web/CloudOps',)","(2,)",60,10S
 chronos_bolt_mini,bizitobs_service/10S/short,2,0.7681303024291992,"('Web/CloudOps',)","(2,)",60,10S
@@ -1320,10 +1319,6 @@ chronos_bolt_small,bizitobs_l2c/5T/long,6,0.9474196434020996,"('Web/CloudOps',)"
 chronos_bolt_small,bizitobs_l2c/5T/long,7,0.9267797470092773,"('Web/CloudOps',)","(7,)",720,5T
 chronos_bolt_small,bizitobs_l2c/5T/long,8,0.9286229610443115,"('Web/CloudOps',)","(7,)",720,5T
 chronos_bolt_small,bizitobs_l2c/5T/long,9,0.9241809844970703,"('Web/CloudOps',)","(7,)",720,5T
-
-
-
-
 chronos_bolt_base,exchange_rate/short,0,1.120772123336792,Econ/Fin,1,8,D
 chronos_bolt_base,exchange_rate/short,1,0.13032174110412598,Econ/Fin,1,8,D
 chronos_bolt_base,exchange_rate/short,2,0.11663985252380371,Econ/Fin,1,8,D
@@ -1384,12 +1379,17 @@ chronos_bolt_base,ercot/long,6,2.5139098167419434,Energy,1,720,H
 chronos_bolt_base,ercot/long,7,2.5206921100616455,Energy,1,720,H
 chronos_bolt_base,ercot/long,8,2.533078908920288,Energy,1,720,H
 chronos_bolt_base,ercot/long,9,2.5479013919830322,Energy,1,720,H
-chronos_bolt_base,dominick/short,0,177.30995178222656,Sales,1,2,W
-chronos_bolt_base,dominick/short,1,177.63416576385498,Sales,1,2,W
-chronos_bolt_base,dominick/short,2,177.13422226905823,Sales,1,2,W
-chronos_bolt_base,dominick/short,3,177.45809364318848,Sales,1,2,W
-chronos_bolt_base,dominick/short,4,177.4059157371521,Sales,1,2,W
-chronos_bolt_base,dominick/short,5,177.80875968933105,Sales,1,2,W
+chronos_bolt_base,dominick/short,0,169.23281598091125,Sales,1,2,W
+chronos_bolt_base,dominick/short,1,174.22431468963623,Sales,1,2,W
+chronos_bolt_base,dominick/short,2,174.4030635356903,Sales,1,2,W
+chronos_bolt_base,dominick/short,3,174.69858074188232,Sales,1,2,W
+chronos_bolt_base,dominick/short,4,173.9500834941864,Sales,1,2,W
+chronos_bolt_base,dominick/short,5,173.95753026008606,Sales,1,2,W
+chronos_bolt_base,dominick/short,6,173.73339676856995,Sales,1,2,W
+chronos_bolt_base,dominick/short,7,174.12752032279968,Sales,1,2,W
+chronos_bolt_base,dominick/short,8,174.14536213874817,Sales,1,2,W
+chronos_bolt_base,dominick/short,9,174.3932888507843,Sales,1,2,W
+chronos_bolt_base,dominick/medium,0,162.36232709884644,Sales,1,20,W
 
 chronos_bolt_base,solar/10T/short,0,24.918404817581177,"('Energy',)","(1,)",48,10T
 chronos_bolt_base,solar/10T/short,1,24.643474578857422,"('Energy',)","(1,)",48,10T
