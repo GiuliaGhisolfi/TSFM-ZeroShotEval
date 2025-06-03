@@ -66,6 +66,7 @@ timesfm2,dominick/short,3,1835.8476192951202,Sales,1,2,W
 timesfm2,dominick/short,4,1836.541606426239,Sales,1,2,W
 timesfm2,dominick/short,5,1834.5543813705444,Sales,1,2,W
 timesfm2,dominick/short,6,1833.3021001815796,Sales,1,2,W
+
 timesfm2,bitbrains_rnd/5T/short,0,350.0954923629761,"('Web/CloudOps',)","(2,)",48,5T
 timesfm2,bitbrains_rnd/5T/short,1,352.22539019584656,"('Web/CloudOps',)","(2,)",48,5T
 timesfm2,bitbrains_rnd/5T/short,2,351.31547832489014,"('Web/CloudOps',)","(2,)",48,5T
@@ -196,4 +197,15 @@ timesfm2,bitbrains_rnd/H/short,6,37.669819593429565,"('Web/CloudOps',)","(2,)",4
 timesfm2,bitbrains_rnd/H/short,7,36.92739725112915,"('Web/CloudOps',)","(2,)",48,H
 timesfm2,bitbrains_rnd/H/short,8,37.13520312309265,"('Web/CloudOps',)","(2,)",48,H
 timesfm2,bitbrains_rnd/H/short,9,37.090226888656616,"('Web/CloudOps',)","(2,)",48,H
+timesfm2,solar/W/short,0,4.104996681213379,"('Energy',)","(1,)",8,W
+timesfm2,solar/W/short,1,3.2221412658691406,"('Energy',)","(1,)",8,W
+timesfm2,solar/W/short,2,3.1879920959472656,"('Energy',)","(1,)",8,W
+timesfm2,solar/W/short,3,3.1414315700531006,"('Energy',)","(1,)",8,W
+timesfm2,solar/W/short,4,3.0675041675567627,"('Energy',)","(1,)",8,W
+timesfm2,solar/W/short,5,3.074915647506714,"('Energy',)","(1,)",8,W
+timesfm2,solar/W/short,6,3.0429184436798096,"('Energy',)","(1,)",8,W
+timesfm2,solar/W/short,7,3.0336790084838867,"('Energy',)","(1,)",8,W
+timesfm2,solar/W/short,8,3.069178342819214,"('Energy',)","(1,)",8,W
+timesfm2,solar/W/short,9,3.040590286254883,"('Energy',)","(1,)",8,W
+
 timesfm2,bitbrains_fast_storage/5T/short,0,874.1364915370941,"('Web/CloudOps',)","(2,)",48,5T
