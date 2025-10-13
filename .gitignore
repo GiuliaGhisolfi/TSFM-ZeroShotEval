@@ -2,3 +2,4 @@ __pycache__
 src/data/gift_benchmark
 src/data/chronos_data
 notebooks
+pretty_tables.ipynb
